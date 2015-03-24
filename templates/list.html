@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div class="workers">
+    <table style="width:960px; margin: 0 auto;">
+        {% for w in workers %}
+
+            <tr><td>{{ w.id }}</td></tr>
+
+        {% end %}
+    </table>
+</div>
+<br><br>
+<div class="j['bs']">
+
+        {% for j in jobs %}
+        <table style="width:960px; margin: 0 auto;">
+                <tr><td>{{ j['id'] }}</td><td>{{ j['cmd'] }}</td><td>{{ j['body'] }}</td><td>Assigned To: {{ j['assigned_to'] }}</td></tr>
+        </table>
+            <table style="width:960px; margin: 0 auto;">
+                <tr><td><pre>{{ j['output'] }}</pre></td></tr>
+            </table>
+
+        {% end %}
+
+</div>
+
+<script>
+    setTimeout(function() {
+        location.reload();
+    },1000);
+</script>
+
+</body>
+</html>
